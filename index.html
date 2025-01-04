@@ -31,7 +31,7 @@
 
         /* Header Styles */
         .header {
-           background-color: #13119e;
+           background-color: #0c0c33cc;
             padding: 0.9rem 2rem;
             color: rgb(241, 241, 241);
             text-align: right;
@@ -187,6 +187,15 @@
         /* News & Articles Section */
        /* Container untuk membungkus dua section */
 /* Container untuk membungkus dua section */
+/* Agar box-sizing mencakup padding dan border */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0; /* Menghindari margin default */
+}
+
+/* Styling untuk container dan section */
 .sections-container {
     display: flex;
     justify-content: space-between; /* Memberikan jarak antara dua section */
@@ -279,6 +288,50 @@
     font-size: 1.2rem;
     color: var(--secondary-color);
 }
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+    .sections-container {
+        flex-direction: column; /* Mengubah layout jadi kolom pada mobile */
+        gap: 1rem; /* Mengurangi jarak antar section */
+    }
+
+    .section {
+        padding: 1rem; /* Mengurangi padding untuk mobile */
+        margin: 0; /* Menghapus margin otomatis */
+        flex: none; /* Menghindari pembagian lebar yang sama */
+        width: 100%; /* Memastikan section mengambil seluruh lebar */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Menurunkan ukuran font judul */
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Membuat card dalam satu kolom di mobile */
+    }
+
+    .card {
+        margin: 0; /* Menghindari margin yang menyebabkan scroll */
+    }
+
+    .card img {
+        height: 180px; /* Mengurangi tinggi gambar agar lebih pas di mobile */
+    }
+
+    .card-content {
+        padding: 1rem; /* Menurunkan padding agar konten lebih efisien */
+    }
+
+    .card h3 {
+        font-size: 1.1rem; /* Mengurangi ukuran font di mobile */
+    }
+
+    .btn {
+        font-size: 0.9rem; /* Menyesuaikan ukuran tombol */
+    }
+}
+
 
 
         .read-count {
@@ -409,6 +462,8 @@
                 padding: 0rem 1rem;
             }
         }
+
+        
     </style>
 </head>
 
@@ -420,7 +475,7 @@
     <nav class="navbar">
         <a href="#" class="navbar-brand">
             <img src="./img/logo.png" alt="Logo SDN bangkit">
-            <h1>SDN-BANGKIT</h1>
+            <h1>SDN-Bangkit</h1>
         </a>
         <div class="menu-toggle">
             <i class="fas fa-bars"></i>
