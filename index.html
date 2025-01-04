@@ -141,29 +141,35 @@
         z-index: 2; /* Di atas gambar */
     }
 
+/* Styling untuk welcome-content */
 .welcome-content {
     position: relative;
-    z-index: 3; /* Di atas overlay */
+    z-index: 3;
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
     animation: fadeInUp 1s ease-out;
 
-    /* Geser ke bawah */
+    /* Untuk tampilan desktop atau laptop */
     margin-top: 100px; /* Tambahkan jarak 100px di atas */
 }
 
-.welcome-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
+/* Styling untuk tampilan mobile */
+@media (max-width: 768px) {
+    .welcome-content {
+        margin-top: 50px; /* Mengurangi jarak atas di perangkat mobile */
+        padding: 1rem; /* Menyesuaikan padding untuk mobile */
+    }
+
+    .welcome-content h2 {
+        font-size: 2rem; /* Ukuran font lebih kecil di mobile */
+    }
+
+    .welcome-content p {
+        font-size: 1rem; /* Ukuran font lebih kecil di mobile */
+    }
 }
 
-.welcome-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
 
 
         .btn {
