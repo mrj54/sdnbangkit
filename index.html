@@ -31,7 +31,7 @@
 
         /* Header Styles */
         .header {
-           background-color: #322c41;
+           background-color: #13119e;
             padding: 0.9rem 2rem;
             color: rgb(241, 241, 241);
             text-align: right;
@@ -157,121 +157,129 @@
 /* Styling untuk tampilan mobile */
 @media (max-width: 768px) {
     .welcome-content {
-        margin-top: 50px; /* Mengurangi jarak atas di perangkat mobile */
-        padding: 1rem; /* Menyesuaikan padding untuk mobile */
+        margin-top: 50px;
+        padding: 1rem;
     }
 
     .welcome-content h2 {
-        font-size: 2rem; /* Ukuran font lebih kecil di mobile */
+        font-size: 2rem;
     }
 
     .welcome-content p {
-        font-size: 1rem; /* Ukuran font lebih kecil di mobile */
+        font-size: 1rem;
+        margin-bottom: 1.5rem; /* Menambahkan jarak bawah pada paragraf */
     }
 }
 
-
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: var(--transition);
-            border: 2px solid transparent;
-            font-weight: 500;
-        }
-
-        .btn:hover {
-            background-color: transparent;
-            border-color: white;
-            transform: translateY(-3px);
-        }
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    font-weight: 500;
+    margin-top: 2rem;
+}
 
         /* News & Articles Section */
-        .section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+       /* Container untuk membungkus dua section */
+/* Container untuk membungkus dua section */
+.sections-container {
+    display: flex;
+    justify-content: space-between; /* Memberikan jarak antara dua section */
+    gap: 2rem; /* Memberikan jarak antara section */
+    padding: 2rem 0;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--secondary-color);
-            position: relative;
-            font-size: 2rem;
-            font-weight: 600;
-        }
+/* Styling untuk masing-masing section */
+.section {
+    padding: 1rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1; /* Memberikan masing-masing section lebar yang sama */
+}
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background-color: var(--primary-color);
-            border-radius: 3px;
-        }
+/* Bagian judul */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+}
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            padding: 1rem;
-        }
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
 
-        .card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            position: relative;
-        }
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    position: relative;
+}
 
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
 
-        .card:hover img {
-            transform: scale(1.05);
-        }
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: var(--transition);
+}
 
-        .card-content {
-            padding: 1.5rem;
-        }
+.card:hover img {
+    transform: scale(1.05);
+}
 
-        .card-date {
-            color: #666;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
+.card-content {
+    padding: 1.5rem;
+}
 
-        .card-date i {
-            color: var(--primary-color);
-        }
+.card-date {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 
-        .card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-        }
+.card-date i {
+    color: var(--primary-color);
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
 
         .read-count {
             font-size: 0.85rem;
@@ -398,7 +406,7 @@
             }
 
             .section {
-                padding: 2rem 1rem;
+                padding: 0rem 1rem;
             }
         }
     </style>
@@ -435,6 +443,7 @@
     </div>
 </section>
 
+<div class="sections-container">
     <section id="berita" class="section">
         <h2 class="section-title">BERITA TERKINI</h2>
         <div class="card-grid">
@@ -443,7 +452,7 @@
                 <div class="card-content">
                     <div class="card-date">
                         <i class="far fa-calendar-alt"></i>
-             2 januri 2025
+                        2 januari 2025
                     </div>
                     <h3>Belajar website benara</h3>
                     <div class="read-count">
@@ -456,28 +465,80 @@
             <!-- More news cards here -->
         </div>
     </section>
-    
-    <section id="artikel" class="section">
-        <h2 class="section-title">ARTIKEL PENDIDIKAN</h2>
+
+    <section id="berita" class="section">
+        <h2 class="section-title">BERITA TERKINI</h2>
         <div class="card-grid">
             <article class="card">
-                <img src="./img/antarafoto-pemanfaatan-teknologi-virtual-reality-di-bidang-pendidikan-060824-mm-2-4134402628.webp" alt="Keunggulan proyek kolaboratif">
+                <img src="./img/daring.jpg" alt="Belajar Daring">
                 <div class="card-content">
                     <div class="card-date">
                         <i class="far fa-calendar-alt"></i>
-                        3 januari 2025
+                        2 januari 2025
                     </div>
-                    <h3>Keunggulan Proyek media interaktif</h3>
+                    <h3>Belajar website benara</h3>
                     <div class="read-count">
                         <i class="far fa-eye"></i>
-                        Dibaca 0 kali
+                        Dibaca 0 Kali
                     </div>
                     <a href="#" class="btn">SELENGKAPNYA <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
-            <!-- More article cards here -->
+            <!-- More news cards here -->
         </div>
+    </section>
+</div>
+
+    
+    <div class="sections-container">
+        <section class="artikel section">
+            <h2 class="section-title">ARTIKEL PENDIDIKAN</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <img src="./img/antarafoto-pemanfaatan-teknologi-virtual-reality-di-bidang-pendidikan-060824-mm-2-4134402628.webp"
+                        alt="Keunggulan proyek kolaboratif">
+                    <div class="card-content">
+                        <div class="card-date">
+                            <i class="far fa-calendar-alt"></i>
+                            3 Januari 2025
+                        </div>
+                        <h3>Keunggulan Proyek media interaktif</h3>
+                        <div class="read-count">
+                            <i class="far fa-eye"></i>
+                            Dibaca 0 kali
+                        </div>
+                        <a href="#" class="btn">SELENGKAPNYA <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- More article cards here -->
+            </div>
         </section>
+    
+        <section class="artikel section">
+            <h2 class="section-title">ARTIKEL PENDIDIKAN</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <img src="./img/antarafoto-pemanfaatan-teknologi-virtual-reality-di-bidang-pendidikan-060824-mm-2-4134402628.webp"
+                        alt="Keunggulan proyek kolaboratif">
+                    <div class="card-content">
+                        <div class="card-date">
+                            <i class="far fa-calendar-alt"></i>
+                            3 Januari 2025
+                        </div>
+                        <h3>Keunggulan Proyek media interaktif</h3>
+                        <div class="read-count">
+                            <i class="far fa-eye"></i>
+                            Dibaca 0 kali
+                        </div>
+                        <a href="#" class="btn">SELENGKAPNYA <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- More article cards here -->
+            </div>
+        </section>
+    </div>
+
+
 
     <footer class="footer">
         <div class="footer-content">
