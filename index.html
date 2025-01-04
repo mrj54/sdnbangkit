@@ -30,92 +30,82 @@
         }
 
         /* Header Styles */
-       /* Header */
-.header {
-    background-color: #0f042b;
-    padding: 0.8rem 2rem;
-    color: rgb(241, 241, 241);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+        .header {
+           background-color: #322c41;
+            padding: 0.9rem 2rem;
+            color: rgb(241, 241, 241);
+            text-align: right;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navigation */
+     .navbar {
+    
+    display: flex;    background-color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
     z-index: 100;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
 }
 
-/* Navbar */
-.navbar {
+.navbar.sticky {
+    padding: 0.8rem 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    gap: 1rem;
 }
 
-/* Menu toggle */
-.menu-toggle {
-    display: none; /* Hide on desktop */
+.navbar-brand img {
+    width: 45px;
+    transition: var(--transition);
+}
+
+.navbar-brand h1 {
     font-size: 1.5rem;
-    color: rgb(241, 241, 241);
-    cursor: pointer;
+    font-weight: 600;
 }
 
-/* Navigation links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    transition: transform 0.3s ease;
+    gap: 2rem;
+    margin-left: auto; /* Pindahkan ke kanan */
 }
 
 .nav-links a {
-    color: rgb(241, 241, 241);
+    color: var(--text-color);
     text-decoration: none;
+    padding: 0.5rem;
     font-weight: 500;
     position: relative;
+    transition: var(--transition);
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: rgb(241, 241, 241);
-    transition: width 0.3s ease;
+    background-color: var(--primary-color);
+    transition: var(--transition);
 }
 
 .nav-links a:hover::after {
     width: 100%;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Show on mobile */
-    }
-
-    .nav-links {
-        display: none; /* Hidden by default on mobile */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 1rem;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
 
         /* Welcome Section */
       .welcome {
@@ -135,7 +125,11 @@
         top: 0;
         left: 0;
         z-index: 1; /* Di bawah overlay */
+         transition: var(--transition);
     }
+       .welcome:hover .background-image {
+    transform: scale(1.05); /* Perbesar sedikit gambar */
+}
 
     .overlay {
         position: absolute;
@@ -147,26 +141,30 @@
         z-index: 2; /* Di atas gambar */
     }
 
-    .welcome-content {
-        position: relative;
-        z-index: 3; /* Di atas overlay */
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        animation: fadeInUp 1s ease-out;
-    }
+.welcome-content {
+    position: relative;
+    z-index: 3; /* Di atas overlay */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
 
-    .welcome-content h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-    }
+    /* Geser ke bawah */
+    margin-top: 100px; /* Tambahkan jarak 100px di atas */
+}
 
-    .welcome-content p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-    }
+.welcome-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
 
         .btn {
             display: inline-block;
@@ -361,14 +359,55 @@
         }
 
         /* Responsive Design */
-        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .welcome-content h2 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
 </head>
 
 <body>
-<header class="header">
-    <time id="timeDisplay"><i class="far fa-clock"></i> Sabtu, 4 Januari 2025 05:14:52 PM</time>
+    <header class="header">
+        <time id="timeDisplay"><i class="far fa-clock"></i> Sabtu, 4 Januari 2025 05:14:52 PM</time>
+    </header>
+
     <nav class="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="./img/logo.png" alt="Logo SDN bangkit">
+            <h1>SDN-BANGKIT</h1>
+        </a>
         <div class="menu-toggle">
             <i class="fas fa-bars"></i>
         </div>
@@ -379,9 +418,6 @@
             <li><a href="#kontak">Kontak</a></li>
         </ul>
     </nav>
-</header>
-
-
 
 <section class="welcome">
     <img src="./img/image.png" alt="Background Image" class="background-image">
@@ -535,10 +571,5 @@
             section.style.transition = 'all 0.6s ease-out';
             observer.observe(section);
         });
-
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.toggle('active');
-            });
-
     </script>
 </body>
